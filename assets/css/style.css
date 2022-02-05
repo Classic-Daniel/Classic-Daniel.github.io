@@ -1173,3 +1173,15 @@ section .container {
   left: 0;
   z-index: -1;
 }
+
+@font-face {
+  font-family: 'AlienFont';
+  src: url('fonts/Alien/alien-webfont.woff2') format('woff2'),
+       url('fonts/Alien/alien-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.alientext{
+  font-family: "AlienFont";
+}
