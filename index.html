@@ -52,10 +52,10 @@
         <ul>
           <li><a class="nav-link active" href="#header">00 : HOME</a></li>
           <!-- <li><a class="nav-link" href="#about">About</a></li> -->
-          <!-- <li><a class="nav-link" href="#resume">Resume</a></li> -->
+          <li><a class="nav-link" href="#resume">01 : RESUME</a></li>
           <!-- <li><a class="nav-link" href="#services">Services</a></li> -->
-          <li><a class="nav-link" href="#portfolio">01 : PORTFOLIO</a></li>
-          <li><a class="nav-link" href="#future-work">02: FUTURE WORK</a></li>
+          <li><a class="nav-link" href="#portfolio">02 : PORTFOLIO</a></li>
+          <li><a class="nav-link" href="#future-work">03: FUTURE WORK</a></li>
           <!-- <li><a class="nav-link" href="#contact">Contact</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -417,60 +417,183 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <h3 class="resume-title">Sumary</h3>
+          <h3 class="resume-title">Summary</h3>
           <div class="resume-item pb-0">
-            <h4>Alice Barkley</h4>
-            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+            <h4>Daniel Bolgar</h4>
+            <p><em>A software developer with 4 years of experience working at robotics startups, focused on the development of user-friendly computer vision solutions and robot tool integration.</em></p>
+          </div>
+
+
+          <h3 class="resume-title">Professional Experience</h3>
+          <div class="resume-item">
+            <h4>Software Developer</h4>
+            <h5>2019 - 2021</h5>
+            <p><em>OnRobot A/S, Aalborg, Denmark </em></p>
             <p>
+              <p>
+                <strong>About the company</strong>: <br> A fast growing, ambitious, medium sized robotics
+                company with the goal of becoming a One-Stop Shop for applications and
+                tooling of industrial robots. It was named a soonicorn company, i.e. a startup
+                expected to hit a 100 million USD evaluation soon. Its portfolio includes robot
+                vision, grippers, analytics, force sensors, a sander, and a screwdriver. All the
+                products are integrated with a wide variety of industrial/collaborative robots.
+                The R&D department is quite small, the work is highly dynamic. OnRobot A/S
+                acquired my previous company, Blue Workforce A/S.
+              </p>
+            </p>
+            <p>
+              <p>
+                <strong>My responsibilities:</strong>:<br> 
+              </p>
             <ul>
-              <li>Portland par 127,Orlando, FL</li>
-              <li>(123) 456-7891</li>
-              <li>alice.barkley@example.com</li>
+              <li>Research, evaluation, implementation of algorithms for the company’s 2.5D
+                robot vision solution, OnRobot Eyes. The goal was to create a vision system
+                that is easy-to-setup, fast, robust, and cheap. I have implemented
+                algorithms for workspace calibration, object segmentation, object
+                recognition, object localisation, object inspection.</li>
+              <li>Automation of vision software deployment.</li>
+              <li>Adjustment of Blue Workforce’s computer vision solution to fitOnRobot
+                Eyes’s needs.</li>
+              <li>Prototype OnRobot’s generalized robot programming solution, meant to
+                ease deployment of industrial robot applications.</li>
+              <li>Tool integration and GUI development for UR cobots:
+                <ul>
+                  <li>OnRobot Eyes</li>
+                  <li>OnRobot Magnetic Gripper</li>
+                  <li>OnRobot Sander</li>
+                  <li>OnRobot Two Finger Gripper</li>
+                </ul>
+              </li>
+              <li>Tool integration and GUI development for Yaskawa cobots:
+                <ul>
+                  <li>OnRobot RG2</li>
+                  <li>OnRobot Magnetic Gripper</li>
+                  <li>OnRobot Two Finger Gripper</li>
+                  <li>OnRobot Vacuum Gripper</li>
+                  <li>OnRobot Soft Gripper</li>
+                </ul>
+              </li>
+            </ul>
+            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Software Developer</h4>
+            <h5>2017 - 2019</h5>
+            <p><em>Blue Workforce A/S, Aalborg, Denmark</em></p>
+            <p>
+              <p>
+                <strong>About the company</strong>: <br> An extremely ambitious robotics startup, acquired by
+                OnRobot A/S. Before its acquisition, the R&D department consisted of 14
+                people. The goal of Blue Workforce A/S was to democratize robotics by
+                offering cheap, scalable, easy to setup pick and place solutions for small and
+                medium sized companies. The main customers were bakeries, farms,
+                secondary packaging companies. The company’s portfolio included:
+              </p>
+            <ul>
+              <li>A cheap and fast 4-arm parallel robot.</li>
+              <li>An easy-to-setup, flexible vision system with a visual programming
+                interface, mainly created for tracking and classifying objects on a conveyor
+                belt.</li>
+              <li>A distributed, ROS inspired solution for connecting the nodes: robots, belt
+                encoders, digital twin, computer vision system, 3rd party I/Os.</li>
+              <li>A robot simulation platform derived from the V-Rep robot simulator. Easy
+                setup, capable of viability testing, digital twin of the real robot.</li>
+                <li>A soft, compliant gripper.</li>
+            </ul>
+            </p>
+            <p>
+              <p>
+                <strong>My responsibilities:</strong>:<br> 
+              </p>
+            <ul>
+              <li>Creation of a flexible, user friendly, robust, visually programmable vision
+                system for a wide range of pick and place applications, using the Intel
+                RealSense D415 3D camera. Applications included:
+                <ul>
+                  <li>Detection of strawberries in a farm setting. Setting the trajectory for the
+                    removal of strawberries</li>
+                  <li>Automatic planting through detection and tracking of holes in plant pots
+                    on a conveyor belt.</li>
+                  <li>Quality check for pastries and sushi plates assembled by the robot.</li>
+                </ul>
+              </li>
+              <li>Automated data collection, data labeling, data augmentation solution for
+                machine learning datasets. Utilization of transfer learning to fit YOLO v2 to
+                the gathered data.</li>
+              <li>Visualization of the robot’s trajectory through Microsoft HoloLens AR.</li>
+              <li>Extension of the parallel robot’s library of trajectories.</li>
+              <li>Synchronization of distributed system components.</li>
+              <li>Creation of bash scripts for packaging and automatic deployment.</li>
             </ul>
             </p>
           </div>
 
-          <h3 class="resume-title">Education</h3>
           <div class="resume-item">
-            <h4>Master of Fine Arts &amp; Graphic Design</h4>
-            <h5>2015 - 2016</h5>
-            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+            <h4>Driving Assistance Computer Vision Intern</h4>
+            <h5>2015</h5>
+            <p><em>Bosch GmbH, Budapest, Hungary</em></p>
+
+            <p>
+              <p>
+                <strong>My responsibilities:</strong>:<br> 
+              </p>
+            <ul>
+              <li>Writing scripts for Altium to extract PCB layout data.
+              </li>
+              <li>Support tasks such as soldering, checking for PCB faults, running mostly
+                automated tests.</li>
+            </ul>
+            </p>
           </div>
-          <div class="resume-item">
-            <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-            <h5>2010 - 2014</h5>
-            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-          </div>
+
+
         </div>
         <div class="col-lg-6">
-          <h3 class="resume-title">Professional Experience</h3>
+          <h3 class="resume-title">Education</h3>
           <div class="resume-item">
-            <h4>Senior graphic design specialist</h4>
-            <h5>2019 - Present</h5>
-            <p><em>Experion, New York, NY </em></p>
-            <p>
+            <h4>Master of Science in Control & Automation</h4>
+            <h5>2016 - 2018</h5>
+            <p><em>Aalborg University, Aalborg, Denmark</em></p>                
             <ul>
-              <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-              <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-              <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-              <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              <li>Internship at Blue Workforce</li>
+              <li>Final project: Orientation control of a
+                cube satellite using gyroscope and
+                magnetic actuators</li>
+              <li>
+                Semester projects:
+                <ul>
+                  <li>Haptic feedback for remote
+                    controlled surgical robot</li>
+                  <li>Force control of wall mounting
+                    robot</li>
+                </ul>
+              </li>
             </ul>
-            </p>
           </div>
           <div class="resume-item">
-            <h4>Graphic design specialist</h4>
-            <h5>2017 - 2018</h5>
-            <p><em>Stepping Stone Advertising, New York, NY</em></p>
-            <p>
+            <h4>Exchange Semester in Electrical & Computing</h4>
+            <h5>Fall 2017</h5>
+            <p><em>Sungkyunkwan University, Suwon, Republic Of Korea</em></p>
             <ul>
-              <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-              <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-              <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-              <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+              <li>Focus on Machine Learning, Computer
+                Vision, and Chip Design</li>
             </ul>
-            </p>
+          </div>
+          <div class="resume-item">
+            <h4>Bachelor of Science in Mechatronics Engineering</h4>
+            <h5>2012 - 2016</h5>
+            <p><em>Budapest University of Technology and Economics, Budapest, Hungary</em></p>
+            <ul>
+              <li>Summa Cum Laude</li>
+              <li>Final Project: 3D scanning with an
+                Android phone</li>
+              <li>Member of MSZO – Mechatronics
+                Student Organization</li>
+              <li>Unilever Engineering Competition: 3rd
+                place</li>
+              <li>NYIFFF Physics Competition: 2nd place</li>
+              <li>Internship at Bosch</li>
+            </ul>
           </div>
         </div>
       </div>
