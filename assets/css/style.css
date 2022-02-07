@@ -1233,3 +1233,10 @@ and (min-width : 625px) {
     padding-top: 62.5%;
   }
 }
+
+.encrypted-text{
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
