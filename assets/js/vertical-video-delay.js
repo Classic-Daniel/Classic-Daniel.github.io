@@ -1,27 +1,67 @@
 let video = document.getElementById("videoInput"); // video is the id of video tag
-video.width = 640;
-video.height = 480;
+video.width = 320;
+video.height = 240;
+document.getElementById("videoInput").style.display = "none";
 
 var BUFFER_SIZE = 30;
+var bufferReady = false;
 var imageBuffer = new Array(BUFFER_SIZE);
 console.log("imageBuffer length: " + imageBuffer.length);
 // for (let i = 0; i < BUFFER_SIZE; i++) {
-//         let img = new cv.Mat(video.height, video.width, cv.CV_8UC4);
-//         // imageBuffer[i] = img;
+//     imageBuffer[i] = new cv.Mat(video.height, video.width, cv.CV_8UC4);
 // }
-var currentIndex = 0;
+var currentIndex = -1;
 
 function addNewImage(image){
-    imageBuffer[currentIndex] = image.clone();
     currentIndex = (currentIndex + 1) % BUFFER_SIZE;
-    // console.log(imageBuffer[currentIndex])
-    console.log(currentIndex);
+    imageBuffer[currentIndex] = image.clone();
+    if(imageBuffer[BUFFER_SIZE - 1] != undefined){
+      bufferReady = true;
+    }
 }
 
 function getProcessedImage(){
-    // generatedImage = new cv.Mat(video.height, video.width, cv.CV_8UC4);
-    // heightStep = Math.round(video.height / BUFFER_SIZE);
+    // let generatedImage = new cv.Mat(video.height, video.width, cv.CV_8UC4);
+    let generatedImage = imageBuffer[currentIndex].clone();
+    // console.log(generatedImage);
+    // bottomImage = imageBuffer[Math.max((currentIndex - 10), 0)];
+    // bottomImage = cv.colRange(generatedImage, 100, 200);
 
+    heightStep = Math.round(video.height / BUFFER_SIZE);
+
+    if(bufferReady){
+      for(let part = 1; part < BUFFER_SIZE; part++)
+      {
+        partFirstRow = heightStep * part;
+        bufferIndex = (currentIndex + part) % BUFFER_SIZE;
+        for (let j = partFirstRow; j < partFirstRow + heightStep; j++)
+        {
+          for (let i = 1; i < video.width; i++)
+          {              
+            // generatedImage.ucharPtr(j, i)[0] = 255;
+            // generatedImage.ucharPtr(j, i)[1] = 255;
+            // generatedImage.ucharPtr(j, i)[2] = 255;
+            generatedImage.ucharPtr(j, i)[0] = imageBuffer[bufferIndex].ucharPtr(j, i)[0];
+            generatedImage.ucharPtr(j, i)[1] = imageBuffer[bufferIndex].ucharPtr(j, i)[1];
+            generatedImage.ucharPtr(j, i)[2] = imageBuffer[bufferIndex].ucharPtr(j, i)[2];
+          }
+        }
+      }
+
+      // for (let j = 1; j < video.height/3; j++)
+      // {
+      //   for (let i = 1; i < video.width; i++)
+      //   {              
+      //     generatedImage.ucharPtr(j, i)[0] = 255;
+      //     generatedImage.ucharPtr(j, i)[1] = 255;
+      //     generatedImage.ucharPtr(j, i)[2] = 255;
+      //       // generatedImage.ucharPtr(j, i)[0] = imageBuffer[bufferIndex].ucharPtr(j, i)[0];
+      //       // generatedImage.ucharPtr(j, i)[1] = imageBuffer[bufferIndex].ucharPtr(j, i)[1];
+      //       // generatedImage.ucharPtr(j, i)[2] = imageBuffer[bufferIndex].ucharPtr(j, i)[2];
+      //   }
+      // }
+    }
+    
     // for (let i = 1; i < BUFFER_SIZE; i++) {
     //     // create temporary image that will hold the mask
     //     mask = cv.Mat(video.height, video.width, CV_8UC1, Scalar(0));
@@ -29,9 +69,11 @@ function getProcessedImage(){
     //     imageBuffer[i].copyTo(generatedImage, mask);
     // }
     // return imageBuffer[0];
-    // let mask = new cv.Mat(video.height, video.width, cv.CV_8UC1, [255]);
+    // heightStep = Math.round(video.height / BUFFER_SIZE);
+    // let mask = new cv.Mat(video.height, video.width, cv.CV_8UC1, [0, 0, 0, 0]);
+    // cv.rectangle(mask, [0, 0], [100, 100], [122], -1);
     // return mask;
-    return imageBuffer[0];
+    return generatedImage;
 }
 
 navigator.mediaDevices
