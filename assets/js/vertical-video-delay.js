@@ -24,20 +24,13 @@ function getProcessedImage(currentImage){
     let generatedImage = currentImage.clone();
 
     if(bufferReady){
-      heightStep = Math.round(video.height / BUFFER_SIZE);
+      let heightStep = Math.round(video.height / BUFFER_SIZE);
+      let subarrayLength = heightStep * video.width * 4; 
       for(let part = 0; part < BUFFER_SIZE - 1; part++)
       {
-        partFirstRow = heightStep * part;
+        partFirstDataIndex = subarrayLength * part;
         bufferIndex = (currentIndex + part) % BUFFER_SIZE;
-        for (let j = partFirstRow; j < partFirstRow + heightStep; j++)
-        {
-          for (let i = 0; i < video.width; i++)
-          {
-            generatedImage.ucharPtr(j, i)[0] = imageBuffer[bufferIndex].ucharPtr(j, i)[0];
-            generatedImage.ucharPtr(j, i)[1] = imageBuffer[bufferIndex].ucharPtr(j, i)[1];
-            generatedImage.ucharPtr(j, i)[2] = imageBuffer[bufferIndex].ucharPtr(j, i)[2];
-          }
-        }
+        generatedImage.data.set(imageBuffer[bufferIndex].data.subarray(partFirstDataIndex, partFirstDataIndex + subarrayLength), partFirstDataIndex);
       }
     }
     addNewImage(currentImage);
